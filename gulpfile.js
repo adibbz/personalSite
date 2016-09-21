@@ -1,10 +1,16 @@
+"use-strict";
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var cleanCSS = require('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
 var pug = require('gulp-pug');
 
 gulp.task('styles', function() {
     gulp.src('sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'))
 });
 
