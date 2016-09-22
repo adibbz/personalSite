@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 var pug = require('gulp-pug');
+//var browserSync = require('browser-sync').create();
 
 gulp.task('styles', function() {
     gulp.src('sass/**/*.scss')
