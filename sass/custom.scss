@@ -12,18 +12,26 @@ $font-stack-primary: 'Inconsolata', monospace;
 }
 
 html, body {
-    background-image: linear-gradient(0deg, #6EB1B5 0%, #544C85 100%);
+    //background-image: linear-gradient(0deg, #6EB1B5 0%, #544C85 100%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
     background-color: #FFFFFF;
+    background-color: black;
     height: 100%;
+    font-family: $font-stack-primary;
 }
 
 /*-----------------------------------------------------
 |	Content - #main
 -----------------------------------------------------*/
+// .home-wrapper {
+// 	height: 100%;
+// 	border: 2px solid #fff;
+// 	padding: 5px;
+// }
+
 #main {
 	
 	&.home {
@@ -40,9 +48,41 @@ html, body {
 
 			h1 {
 				font-family: $font-stack-primary;
-				font-size: 3.5em;
+				font-size: 4em;
 				font-weight: 400;
 				color: #fff;
+				line-height: 1;
+			}
+
+			h4 {
+				color: #fff;
+				font-family: $font-stack-primary;
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
+
+#social-list {
+	text-align: center;
+	margin: 0;
+
+	li {
+		display: inline-block;
+		margin:0 1em;
+
+		a {
+
+			i {
+				color: #fff;
+				font-size: 1.1em;
+				vertical-align: middle;
+			}
+
+			span {
+				color: #fff;
+				font-family: $font-stack-primary;
+				font-size: 1.1em;
 			}
 		}
 	}
