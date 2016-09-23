@@ -18,13 +18,26 @@ html
     // Custom Styles
     link(rel="stylesheet" type="text/css" href="/css/custom.css" )
     // Fonts
-    link(href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet")
     // Simple Line Icons
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css")
+    // Animate
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
 
   body
   #barba-wrapper
    .barba-container
+    // The overlay
+    div#myNav.overlay
+
+     // Overlay content
+     nav.overlay-content
+      a(href="/resume.html") About
+      a(href="/work.html") Work
+
+    a#open-nav
+     span.nav-icon
+
     block content
 
   // Jquery
