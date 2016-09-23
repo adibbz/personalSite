@@ -122,10 +122,55 @@ html, body {
 /*-----------------------------------------------------
 |	Navigation - #myNav.overlay
 -----------------------------------------------------*/
+
+#site-navigation {
+	position: fixed;
+	right: 40px;
+	top: 60px;
+
+	a {
+		display: block;
+		color: $gray;
+
+		span {
+			color: $gray;
+			display: block;
+			position: relative;
+
+			&:before, &:after{
+				content: '';
+				position: absolute;
+				width: 0%;
+				height: 3px;
+				top: 50%;
+				margin-top: -0.5px;
+				background: $green;
+			}
+
+			&:hover:before {
+				background: $green;
+				width: 105%;
+				margin-left: -6%;
+				transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+			}
+
+			&:hover:after {
+				background: transparent;
+				width: 100%;
+				transition: 0s;
+			}
+		}
+	}
+}
+
+
+
+
+
 #open-nav {
 	position: fixed;
     right: 40px;
-    top: 62px;
+    top: 150px;
     z-index: 100000;
     height: 20px;
     width: 24px;
