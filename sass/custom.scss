@@ -24,8 +24,40 @@ html, body {
     font-family: $font-stack-primary;
 }
 
+@-webkit-keyframes scaleDown {
+	from { }
+	to { opacity: 1; -webkit-transform: scale(.975); }
+}
 @keyframes scaleDown {
-	to { opacity: 1; transform: scale(.8); }
+	from { }
+	to { opacity: 1; -webkit-transform: scale(.975); transform: scale(.975); }
+}
+
+.btn {
+	color: #fff;
+	padding: 10px 25px;
+	border: 2px solid #fff;
+	display: inline-block;
+	transition: color ease-in .3s;
+	transition: background ease-in .3s;
+
+	&:hover, &:focus {
+		background: #fff;
+		color: $green;
+	}
+}
+
+.line {
+	height: .2rem;
+	border: none;
+	width: 13vw;
+	background-color: $green;
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	box-shadow: none;
+
 }
 
 /*-----------------------------------------------------
@@ -36,7 +68,7 @@ html, body {
 }
 
 #main {
-	
+
 	&.home {
 		width: 60%;
 		margin: 0 auto;
@@ -60,20 +92,10 @@ html, body {
 				-webkit-animation-duration: 1s;
 				-moz-animation-duration: 1s;
 				//@include gradient();
-
 			}
-
+			
 			.line {
 				margin: 1.25rem auto;
-				height: .2rem;
-				border: none;
-				width: 20vh;
-				background-color: $green;
-				-webkit-animation-delay: .5s;
-				-moz-animation-delay: .5s;
-				-webkit-animation-duration: 1s;
-				-moz-animation-duration: 1s;
-
 			}
 
 			h4 {
@@ -89,9 +111,41 @@ html, body {
 			}
 		}
 	}
+}
 
-	&.about {
-		height: 100%;
+.about-wrapper {
+	background: #0080ff;
+
+	#main {
+
+		&.about {
+			width: 80%;
+			margin: 0 auto;
+			padding-top: 5rem;
+			height: 100vh;
+			color: #fff;
+
+			h1, h3, h5 {
+				color: #fff;
+				font-family: $font-stack-primary;
+			}
+
+			.line {
+				margin: 0 0 15px 0;
+				width: 5vw;
+			}
+
+			h5 {
+				font-family: $font-stack-primary;
+				margin-top: 2rem;
+				font-weight: 700;
+			}
+
+			.btn {
+				margin-top: 3rem;
+			}
+
+		}
 	}
 }
 
@@ -114,7 +168,6 @@ html, body {
 				font-size: 1em;
 				vertical-align: middle;
 				//@include gradient();
-
 			}
 
 			span {

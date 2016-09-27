@@ -17,6 +17,8 @@ Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container
   $('.home .content hr').animateCss('fadeIn');
   $('.home .content h4').animateCss('fadeIn');
   $('.home .content #social-list').animateCss('fadeIn');
+
+  //$('.about .content').animateCss('fadeInRight');
 });
 
 
@@ -58,8 +60,7 @@ var FadeTransition = Barba.BaseTransition.extend({
     $el.css({
       visibility : 'visible',
       opacity : 0,
-      background: '#0080ff',
-      animation: 'scaleDown .7s ease both'
+      animation: 'scaleDown .7s ease-in-out both'
     });
 
     $el.animate({ opacity: 1 }, 400, function() {
