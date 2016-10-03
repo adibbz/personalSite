@@ -5,7 +5,7 @@ $font-stack-primary: 'Source Code Pro', monospace;
 
 $green: #45ca58;
 $gray: #7b7c7e;
-
+ 
 @mixin gradient() {
 	background: linear-gradient(0deg, #6EB1B5 0%, #544C85 100%);
 	-webkit-background-clip: text;
@@ -30,7 +30,7 @@ html, body {
 }
 @keyframes scaleDown {
 	from { }
-	to { opacity: 1; -webkit-transform: scale(.975); transform: scale(.975); }
+	to { opacity: 1; /*-webkit-transform: scale(.975); transform: scale(.975);*/ }
 }
 
 .btn {
@@ -188,6 +188,10 @@ html, body {
 	position: fixed;
 	right: 40px;
 	top: 60px;
+	-webkit-animation-delay: .3s;
+	-moz-animation-delay: .3s;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
 
 	a {
 		display: block;
@@ -219,6 +223,13 @@ html, body {
 				background: transparent;
 				width: 100%;
 				transition: 0s;
+			}
+		}
+
+		&.active {
+
+			span {
+	
 			}
 		}
 	}
