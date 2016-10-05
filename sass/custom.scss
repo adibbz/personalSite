@@ -156,6 +156,56 @@ html, body {
 	}
 }
 
+.workpage-wrapper {
+	background: #21282f;
+
+	#main {
+		width: 80%;
+		margin: 0 auto;
+		padding-top: 5rem;
+		height: 100vh;
+		color: #fff;
+
+
+		h1, h3 {
+			color: #fff;
+			font-family: $font-stack-primary;
+		}
+
+		.line {
+			margin: 0 0 35px 0;
+			width: 5vw;
+		}
+		
+		#work-list {
+			
+			.work-item {
+				margin-bottom: 45px;
+
+				h5 {
+					color: #fff;
+					font-family: $font-stack-primary;
+
+					a {
+						margin-left: 10px;
+
+						i {
+							color: $green;
+							font-size: .8em;
+						}
+					}
+				}
+
+				p {
+					line-height: 1.3;
+					color: $gray;
+				}
+			}
+		}
+
+	}
+}
+
 #social-list {
 	text-align: center;
 	margin: 0;
@@ -242,7 +292,7 @@ html, body {
 	}
 }
 
-.barba-container[data-namespace="aboutpage"] {
+.barba-container[data-namespace="aboutpage"], .barba-container[data-namespace="workpage"] {
 
 		#site-navigation {
 
