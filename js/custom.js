@@ -13,20 +13,17 @@ $.fn.extend({
 // Wait to add untile PJAX/BARBA has finished
 Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
   //$('#open-nav').animateCss('fadeIn');
-  $('.home .content h1').animateCss('fadeIn');
-  $('.home .content hr').animateCss('fadeIn');
-  $('.home .content h4').animateCss('fadeIn');
-  $('.home .content #social-list').animateCss('fadeIn');
+  $('.home-wrapper .content h1').animateCss('fadeIn');
+  $('.home-wrapper .content hr').animateCss('fadeIn');
+  $('.home-wrapper .content h4').animateCss('fadeIn');
+  $('.home-wrapper .content #social-list').animateCss('fadeIn');
   $('#site-navigation').animateCss('fadeInRight');
 
   //console.log(currentStatus, oldStatus, container);
-    // trying to add body class once
-    var bodyClass = location.pathname.replace(/\.html$/, '') + '-page';
-    $('body').addClass(bodyClass).one;
 
   // Add active class to nav if not home page
   $(function() {
-      if(location.pathname != "/" || location.pathname != "/index.html") {
+      if(location.pathname != "/index.html") {
           $('#site-navigation a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
       }
   });
@@ -71,7 +68,7 @@ var FadeTransition = Barba.BaseTransition.extend({
     $el.css({
       visibility : 'visible',
       opacity : 0,
-      animation: 'scaleDown .7s ease-in-out both' 
+      animation: 'fadeInRight 0.8s ease-in both'
     });
 
     $el.animate({ opacity: 1 }, 400, function() {

@@ -24,13 +24,28 @@ html, body {
     font-family: $font-stack-primary;
 }
 
-@-webkit-keyframes scaleDown {
-	from { }
-	to { opacity: 1; -webkit-transform: scale(.975); }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
-@keyframes scaleDown {
-	from { }
-	to { opacity: 1; /*-webkit-transform: scale(.975); transform: scale(.975);*/ }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .btn {
@@ -65,11 +80,7 @@ html, body {
 -----------------------------------------------------*/
 .home-wrapper {
 
-}
-
-#main {
-
-	&.home {
+	#main {
 		width: 60%;
 		margin: 0 auto;
 		padding: 20px;
@@ -117,34 +128,30 @@ html, body {
 	background: #0080ff;
 
 	#main {
+		width: 80%;
+		margin: 0 auto;
+		padding-top: 5rem;
+		height: 100vh;
+		color: #fff;
 
-		&.about {
-			width: 80%;
-			margin: 0 auto;
-			padding-top: 5rem;
-			height: 100vh;
+		h1, h3, h5 {
 			color: #fff;
+			font-family: $font-stack-primary;
+		}
 
-			h1, h3, h5 {
-				color: #fff;
-				font-family: $font-stack-primary;
-			}
+		.line {
+			margin: 0 0 15px 0;
+			width: 5vw;
+		}
 
-			.line {
-				margin: 0 0 15px 0;
-				width: 5vw;
-			}
+		h5 {
+			font-family: $font-stack-primary;
+			margin-top: 2rem;
+			font-weight: 700;
+		}
 
-			h5 {
-				font-family: $font-stack-primary;
-				margin-top: 2rem;
-				font-weight: 700;
-			}
-
-			.btn {
-				margin-top: 3rem;
-			}
-
+		.btn {
+			margin-top: 3rem;
 		}
 	}
 }
@@ -235,6 +242,16 @@ html, body {
 	}
 }
 
+.barba-container[data-namespace="aboutpage"] {
+
+		#site-navigation {
+
+		a > span {
+			color: #fff;
+		}
+	}
+	
+}
 
 
 
