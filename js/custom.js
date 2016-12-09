@@ -19,7 +19,7 @@ Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container
   $('.home-wrapper .content #social-list').animateCss('fadeIn');
   $('.workpage-wrapper #main').animateCss('fadeInUp');
   $('.about-wrapper #main').animateCss('fadeInUp');
-  console.log(currentStatus, oldStatus, container);
+  //console.log(currentStatus, oldStatus, container);
 
   // Add active class to nav if not home page
   $(function() {
@@ -33,7 +33,7 @@ Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container
 // Wait till transition is complete to add navigation transtion
 Barba.Dispatcher.on('transitionCompleted', function(currentStatus, oldStatus, container) {
   $('#site-navigation').css('visibility', 'visible').animateCss('fadeInRight');
-  $('#site-navigation.show-for-mobile').css('visibility', 'visible').animateCss('fadeInUp');
+  //$('#site-navigation.show-for-mobile').css('visibility', 'visible').animateCss('fadeInUp');
 });
 
 // Standard Barba Fade Transition
