@@ -19,21 +19,30 @@ Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container
   $('.home-wrapper .content #social-list').animateCss('fadeIn');
   $('.workpage-wrapper #main').animateCss('fadeInUp');
   $('.about-wrapper #main').animateCss('fadeInUp');
-  //console.log(currentStatus, oldStatus, container);
 
-  // Add active class to nav if not home page
-  $(function() {
-      if(location.pathname != "/index.html") {
-          $('#site-navigation a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-      }
-  });
+  // setTimeout(
+  // function() 
+  // {
+  //   //do something special
+  //    $('.show-for-mobile #site-navigation-mobile').css('visibility', 'visible').animateCss('fadeInUp');
+  // }, 700);
+
+  //console.log(currentStatus, oldStatus, container);
 
 });
 
+Barba.Dispatcher.on('initStateChange', function(currentStatus, oldStatus, container) {
+
+  $('.show-for-mobile #site-navigation-mobile').css('visibility', 'hidden');
+
+});
+ 
 // Wait till transition is complete to add navigation transtion
 Barba.Dispatcher.on('transitionCompleted', function(currentStatus, oldStatus, container) {
+  
   $('#site-navigation').css('visibility', 'visible').animateCss('fadeInRight');
-  //$('#site-navigation.show-for-mobile').css('visibility', 'visible').animateCss('fadeInUp');
+  $('.show-for-mobile #site-navigation-mobile').css('visibility', 'visible').animateCss('fadeInUp');
+
 });
 
 // Standard Barba Fade Transition
@@ -71,6 +80,9 @@ var FadeTransition = Barba.BaseTransition.extend({
 
     $(this.oldContainer).hide();
 
+    // Start Page at top before fading in new page
+    document.body.scrollTop = 0;
+    
     $el.css({
       visibility : 'visible',
       opacity : 0

@@ -12,10 +12,12 @@ $gray: #7b7c7e;
 	-webkit-text-fill-color: transparent;
 }
 
-@mixin contentFadeInUp() {
-	-webkit-transition: all 5s ease-in-out 2s;
-	-moz-transition: all 5s ease-in-out 2s;
-	transition: all 5s ease-in-out 2s;
+.hide-for-mobile {
+	display: block !important;
+}
+
+.show-for-mobile {
+	display: none !important;
 }
 
 html, body {
@@ -23,11 +25,15 @@ html, body {
     // background-position: center;
     // background-repeat: no-repeat;
     // background-size: cover;
-    background-attachment: scroll;
+    //background-attachment: scroll;
     //background-color: #FFFFFF;
     background-color: #fff;
     height: 100%;
     font-family: $font-stack-primary;
+
+    #barba-wrapper, .barba-container {
+    	height: 100%;
+    }
 }
 
 a {
@@ -142,15 +148,17 @@ a {
 }
 
 .about-wrapper {
-	background: #0d56c2;
+	//background: #0d56c2; 2B2D42 8D99AE 475B63
+	background: #475B63;
+	height: 100%;
+	overflow: auto;
 
 	#main {
 		width: 80%;
 		margin: 0 auto;
-		padding-top: 4rem;
+		padding: 4rem 0;
 		height: 100vh;
 		color: #fff;
-		//@include contentFadeInUp();
 
 		h1, h3, h5 {
 			color: #fff;
@@ -173,21 +181,22 @@ a {
 		}
 
 		.btn {
-			margin-top: 3rem;
+			margin: 2rem 0;
 		}
 	}
 }
 
 .workpage-wrapper {
 	background: #21282f;
+	height: 100%;
+	overflow: auto;
 
 	#main {
 		width: 80%;
 		margin: 0 auto;
-		padding-top: 4rem;
+		padding: 4rem 0;
 		height: 100vh;
 		color: #fff;
-		//@include contentFadeInUp();
 
 
 		h1, h3 {
@@ -344,10 +353,106 @@ a {
 |	Media Queries
 -----------------------------------------------------*/
 
-// iPhone 6 Portrait
+// iPad 6 Landscape
 @media only screen 
-and (min-device-width: 375px) 
+and (min-device-width : 668px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+
+	.about-wrapper, .workpage-wrapper {
+
+		#main {
+			height: 100%;
+			padding-bottom: 4rem;
+		}
+	}
+
+	.about-wrapper {
+
+		#main {
+
+			p {
+				width: 80%;
+			}
+		}
+	}
+
+	.workpage-wrapper {
+
+		#main {
+
+			#work-list {
+
+				.work-item {
+
+					p {
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+
+} // End iPad 6 Landscape
+
+// iPad 6 Portrait
+@media only screen 
+and (min-device-width : 668px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+
+	.home-wrapper {
+		#main {
+			width: 80%;
+		}
+	}
+
+	.about-wrapper {
+
+		#main {
+
+			p {
+				width: 80%;
+			}
+		}
+	}
+
+	.workpage-wrapper {
+
+		#main {
+
+			#work-list {
+
+				.work-item {
+
+					p {
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+
+} // End iPad 6 Portrait
+
+// Weird Mobile Menu Padding bottom fix
+@media only screen 
 and (max-device-width: 667px) 
+and (min-device-width: 460px)
+and (orientation: portrait) {
+
+	.about-wrapper, .workpage-wrapper {
+
+		#main {
+			padding-bottom: 9rem !important;
+		}
+	}
+
+} // End Weird Mobile Menu Padding bottom fix
+
+// iPhone 6+ and down Portrait
+@media only screen 
+and (max-device-width: 736px) 
 and (orientation: portrait) { 
 
 	.hide-for-mobile {
@@ -358,11 +463,10 @@ and (orientation: portrait) {
 		display: block !important;
 	}
 
-	.home-wrapper, .about-wrapper, .workpage-wrapper {
+	.home-wrapper {
 
 		#main {
 			width: 100%;
-			height: 100%;
 
 			#social-list {
 
@@ -374,22 +478,54 @@ and (orientation: portrait) {
 		}
 	}
 
-	#site-navigation.show-for-mobile {
-		visibility: hidden;
-		right: auto;
-		top: auto;
-		bottom: 0px;
-		width: 100%;
-		text-align: center;
-		background: $green;
-		padding: 10px 0;
+	.about-wrapper, .workpage-wrapper {
 
-		a {
-			display: inline-block;
-			margin: 0 .5rem;
+		#main {
+			width: 100%;
+			height: 100%;
 
-			span {
-				color: #fff;
+			h1 {
+				font-size: 2.5em;
+			}
+		}
+	}
+
+	.workpage-wrapper {
+
+		#main {
+
+			#work-list {
+
+				.work-item {
+
+					h5 {
+						font-size: 0.99em;
+					}
+				}
+			}
+		}
+	}
+
+	.show-for-mobile {
+
+		#site-navigation-mobile {
+			visibility: hidden;
+			position: fixed;
+			right: auto;
+			top: auto;
+			bottom: 0px;
+			width: 100%;
+			text-align: center;
+			background: $green;
+			padding: 10px 0;
+
+			a {
+				display: inline-block;
+				margin: 0 .5rem;
+
+				span {
+					color: #fff;
+				}
 			}
 		}
 
@@ -447,7 +583,132 @@ and (orientation: portrait) {
 		}
 	}
 
-} // end iPhone 6 MQ 
+} // end iPhone 6+ and down Portrait MQ  
 
+// iPhone 6+ and down Landscape MQ 
+@media only screen 
+and (max-device-width: 736px) 
+and (orientation: landscape) {
+
+	.hide-for-mobile {
+		display: none !important;
+	}
+
+	.show-for-mobile {
+		display: block !important;
+	}
+
+	.home-wrapper {
+
+		#main {
+			width: 100%;
+		}
+	}
+
+	.about-wrapper, .workpage-wrapper {
+
+		#main {
+			width: 100%;
+			height: 100%;
+
+			h1 {
+				font-size: 2.5em;
+			}
+		}
+	}
+
+	.workpage-wrapper {
+
+		#main {
+
+			#work-list {
+
+				.work-item {
+
+					h5 {
+						font-size: 1.1em;
+					}
+				}
+			}
+		}
+	}
+
+	.show-for-mobile {
+
+		#site-navigation-mobile {
+			visibility: hidden;
+			position: fixed;
+			right: auto;
+			top: auto;
+			bottom: 0px;
+			width: 100%;
+			text-align: center;
+			background: $green;
+			padding: 10px 0;
+
+			a {
+				display: inline-block;
+				margin: 0 .5rem;
+
+				span {
+					color: #fff;
+				}
+			}
+		}
+
+	}
+
+	.about-wrapper {
+
+		#main {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+
+			.content {
+				padding: 0 1.5rem;
+
+				.line {
+					width: 10vw;
+				}
+
+				p {
+					width: 100%;
+					line-height: 1.4;
+				}
+
+				.btn {
+					margin-top: 1rem;
+				}
+			}
+		}
+	}
+
+	.workpage-wrapper {
+
+		#main {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+
+			.content {
+				padding: 0 1.5rem;
+				
+				.line {
+					width: 10vw;
+				}
+			
+				#work-list {
+
+					.work-item {
+
+						p {
+							width: 100%;
+							line-height: 1.4;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 
