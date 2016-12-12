@@ -111,4 +111,3 @@ Barba.Pjax.getTransition = function() {
 
   return FadeTransition;
 };
-
