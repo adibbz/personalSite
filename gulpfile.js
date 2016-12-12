@@ -63,6 +63,6 @@ gulp.task('watch',function() {
     gulp.watch(['js/**/*.js', '!js/scripts.min.js'], ['scripts']);
 });
 
-gulp.task('build', ['css'], function() {
+gulp.task('build', ['css', 'pug'], function() {
     console.log('Building files'.green);
 });
