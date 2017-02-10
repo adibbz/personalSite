@@ -352,6 +352,15 @@ a {
 /*-----------------------------------------------------
 |	Media Queries
 -----------------------------------------------------*/
+// iPad 6 Landscape
+@media only screen 
+and (max-device-width : 668px) {
+
+	body {
+		-webkit-overflow-scrolling: touch;
+	}
+
+}
 
 // iPad 6 Landscape
 @media only screen 
@@ -435,21 +444,6 @@ and (orientation : portrait) {
 
 } // End iPad 6 Portrait
 
-// Weird Mobile Menu Padding bottom fix
-@media only screen 
-and (max-device-width: 667px) 
-and (min-device-width: 460px)
-and (orientation: portrait) {
-
-	.about-wrapper, .workpage-wrapper {
-
-		#main {
-			padding-bottom: 9rem !important;
-		}
-	}
-
-} // End Weird Mobile Menu Padding bottom fix
-
 // iPhone 6+ and down Portrait
 @media only screen 
 and (max-device-width: 736px) 
@@ -482,26 +476,9 @@ and (orientation: portrait) {
 
 		#main {
 			width: 100%;
-			height: 100%;
 
 			h1 {
 				font-size: 2.5em;
-			}
-		}
-	}
-
-	.workpage-wrapper {
-
-		#main {
-
-			#work-list {
-
-				.work-item {
-
-					h5 {
-						font-size: 0.99em;
-					}
-				}
 			}
 		}
 	}
@@ -536,6 +513,7 @@ and (orientation: portrait) {
 		#main {
 			padding-top: 2rem;
 			padding-bottom: 5rem;
+			height: 160vh;
 
 			.content {
 				padding: 0 1.5rem;
@@ -561,6 +539,7 @@ and (orientation: portrait) {
 		#main {
 			padding-top: 2rem;
 			padding-bottom: 5rem;
+			height: 180vh;
 
 			.content {
 				padding: 0 1.5rem;
@@ -572,6 +551,10 @@ and (orientation: portrait) {
 				#work-list {
 
 					.work-item {
+
+						h5 {
+							font-size: 1em;
+						}
 
 						p {
 							width: 100%;
@@ -663,6 +646,7 @@ and (orientation: landscape) {
 		#main {
 			padding-top: 2rem;
 			padding-bottom: 5rem;
+			height: 270vh;
 
 			.content {
 				padding: 0 1.5rem;
@@ -688,6 +672,7 @@ and (orientation: landscape) {
 		#main {
 			padding-top: 2rem;
 			padding-bottom: 5rem;
+			height: 280vh;
 
 			.content {
 				padding: 0 1.5rem;
