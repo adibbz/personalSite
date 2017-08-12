@@ -43,7 +43,7 @@ a {
 	-moz-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
 
-	&:hover {
+	&:hover, &:active, &:focus {
 		color: darken($green, 10%);
 	}
 }
